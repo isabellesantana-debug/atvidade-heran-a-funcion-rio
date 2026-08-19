@@ -1,39 +1,37 @@
 class Funcionario {
-    constructor(nome,salario)
-    this.nome
-    this.salario
+    constructor(nome, salario) {
+        this.nome = nome;
+        this.salario = salario;
+    }
+
+    trabalhar() {
+        console.log(`${this.nome} recebe ${this.salario}. Funcionário está trabalhando.`);
+    }
 }
-trabalhar()
-{
-        console.log(`${this.nome} ${this.salario} Funcionario esta trabalhando.`);
-    }
-    
-class Funcionario extends Professor 
 
-    constructor(, salario, ) {
-        super(nome, salario,disciplina);
-        this.displina = disciplina;
-    }
-   
-carregar(darAula) {
-        if (disciplina <= 0) {
-            console.log("Elaine esta dando aula.");
-            return;
-        }
 
-        if (disciplina > 2.500) {
-            console.log("Elaine nao esta dando aula");
-            return;
-    }
-     this.disciplina = disciplina;
-        console.log(`O ${this.nome} ${this.salario} agora tem ${this.disciplina}`);
+class Professor extends Funcionario {
+    constructor(nome, salario, disciplina) {
+        super(nome, salario);
+        this.disciplina = disciplina;
     }
 
-const Professor = new Professor("Elaine", "R$2.500, Matematica");
+    darAula() {
+        console.log(`${this.nome} está dando aula de ${this.disciplina}.`);
+    }
+}
 
-console.log(Professor1.nome);
-console.log(Professor1.salario);
-console.log(Professor1.disciplina);
 
-Professor1.trabalhar();
-Professor1.darAula();
+const professor1 = new Professor(
+    "Elaine",
+    "R$ 2.500",
+    "Matemática"
+);
+
+
+console.log(professor1.nome);
+console.log(professor1.salario);
+console.log(professor1.disciplina);
+
+professor1.trabalhar();
+professor1.darAula();
